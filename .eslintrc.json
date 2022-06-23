@@ -18,6 +18,7 @@
         "camelcase": "off",
         "operator-linebreak": "warn",
         "func-names": "off",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "warn",
+        "prefer-promise-reject-errors": "off"
     }
 }
