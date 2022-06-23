@@ -1,0 +1,26 @@
+{
+  "name": "clevermedia-be",
+  "version": "1.0.0",
+  "description": "Social media server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CleverMedia-MJV/CleverMedia-BE.git"
+  },
+  "keywords": [
+    "social",
+    "clever"
+  ],
+  "author": "xpan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CleverMedia-MJV/CleverMedia-BE/issues"
+  },
+  "homepage": "https://github.com/CleverMedia-MJV/CleverMedia-BE#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
