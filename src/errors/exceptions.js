@@ -7,8 +7,10 @@ function unhandledRejection(app) {
     if (isProduction) {
       reportErr(err);
     } else {
+      /* eslint-disable no-console */
       console.log(err.name, err.message);
       console.log('Unhandled rejection, xpan gracefully shutting down!!!');
+      /* eslint-disable no-console */
     }
     app.close(() => {
       throw new PromiseError();
