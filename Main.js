@@ -5,3 +5,5 @@ const app = express();
 
 // middlewares
 app.use(helmet());
+
+module.exports = app;
