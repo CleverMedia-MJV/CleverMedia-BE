@@ -2,7 +2,12 @@ require('dotenv').config();
 // websocket, db, process errs
 const http = require('http');
 const { PORT } = require('./config/constants').constants;
-const { unhandledRejection } = require('./src/errors/exceptions');
+const {
+  unhandledRejection,
+  uncaughtExceptions,
+} = require('./src/errors/exceptions');
+
+uncaughtExceptions();
 const App = require('./Main');
 
 const httpServer = http.createServer(App);

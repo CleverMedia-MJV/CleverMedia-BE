@@ -18,6 +18,21 @@ function unhandledRejection(app) {
   });
 }
 
+function uncaughtExceptions() {
+  return process.on('uncaughtException', (err) => {
+    if (isProduction) {
+      reportErr(err);
+    } else {
+      /* eslint-disable no-console */
+      console.log('err', err.stack);
+      console.log('Uncaught exception, xpan gracefully terminating!!!');
+      /* eslint-disable no-console */
+    }
+    throw new Error('Closing');
+  });
+}
+
 module.exports = {
   unhandledRejection,
+  uncaughtExceptions,
 };
