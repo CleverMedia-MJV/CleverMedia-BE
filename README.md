@@ -19,6 +19,6 @@ npm i
 npm run *script
 ```
 scripts are
-- start: production *not yet
+- start: production
 - dev: development
 - test: mocha test *not yet
