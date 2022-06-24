@@ -2,9 +2,13 @@
   "name": "clevermedia-be",
   "version": "1.0.0",
   "description": "Social media server",
+  "engines": {
+    "node": "18.x"
+  },
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV='development' nodemon index.js"
+    "dev": "NODE_ENV='development' nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -21,9 +25,11 @@
   },
   "homepage": "https://github.com/CleverMedia-MJV/CleverMedia-BE#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "helmet": "^5.1.0"
+    "helmet": "^5.1.0",
+    "xss": "^1.0.13"
   },
   "devDependencies": {
     "eslint": "^8.18.0",
