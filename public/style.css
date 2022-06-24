@@ -4,5 +4,18 @@ html, body {
 }
 
 body {
-    background-color: aquamarine;
+    background-color: rgb(165, 203, 218);
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 1rem;
+}
+
+.tag {
+    padding: 3px 10px;
+    display: inline-block;
+    border: 1px solid azure;
+    border-radius: 20%;
+}
+
+.version {
+    background-color: aqua;
 }
