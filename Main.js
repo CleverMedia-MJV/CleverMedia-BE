@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const cors = require('cors');
 const xssClean = require('xss-clean');
@@ -8,6 +9,7 @@ const v1 = require('./src/versions/v1');
 const app = express();
 
 // middlewares
+app.use(bodyParser.json({ limit: '20kb' }));
 app.use(cors());
 app.use(helmet());
 app.use(xssClean());
