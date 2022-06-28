@@ -17,6 +17,7 @@ const UserSchema = new Schema({
     required: [true, 'Full name must be set'],
   },
   image: String,
+  //   todo: to fix the birthday validator
   birthday: {
     type: Date,
     validate: {
