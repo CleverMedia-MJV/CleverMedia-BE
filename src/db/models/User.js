@@ -11,7 +11,7 @@ const UserSchema = new Schema({
   fullname: {
     type: String,
     validate: {
-      validtor: (v) => /\w*\s\w*/.test(v),
+      validator: (v) => /\w*\s\w*/.test(v),
       message: 'Input valid full name',
     },
     required: [true, 'Full name must be set'],
@@ -55,4 +55,4 @@ const UserSchema = new Schema({
   ],
 });
 
-module.exports = mongoose.Model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

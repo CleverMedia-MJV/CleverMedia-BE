@@ -1,4 +1,4 @@
-// const User = require('../../db/models/User');
+const User = require('../../db/models/User');
 
 class UserController {
   constructor(req, res, next) {
@@ -9,6 +9,11 @@ class UserController {
 
   post() {
     console.log(this.req.body);
+    const user = new User(this.req.body);
+    user
+      .save()
+      .then((doc) => this.res.send(doc))
+      .catch((err) => this.res.status(401).send(err));
   }
 }
 
