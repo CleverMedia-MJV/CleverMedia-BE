@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/CleverMedia-MJV/CleverMedia-BE#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",

@@ -8,9 +8,13 @@ class UserController {
   }
 
   post() {
-    console.log(this.req.body);
     const user = new User(this.req.body);
+    const user2 = new User(this.req.body);
     user
+      .save()
+      .then((doc) => this.res.send(doc))
+      .catch((err) => this.res.status(401).send(err));
+    user2
       .save()
       .then((doc) => this.res.send(doc))
       .catch((err) => this.res.status(401).send(err));
