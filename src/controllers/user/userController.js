@@ -19,6 +19,11 @@ class UserController {
       .then((doc) => this.res.send(doc))
       .catch((err) => this.res.status(401).send(err));
   }
+
+  login() {
+    const details = this.req.body;
+    this.res.send('Login');
+  }
 }
 
 module.exports = UserController;
