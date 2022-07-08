@@ -79,6 +79,10 @@ UserSchema.pre('save', async function (next) {
 });
 
 // password validation
+UserSchema.method.validate = async function (password) {
+  // get this password first
+  return bcrypt.compare(password, this.password);
+};
 
 UserSchema.index({ username: 1 });
 module.exports = mongoose.model('User', UserSchema);
