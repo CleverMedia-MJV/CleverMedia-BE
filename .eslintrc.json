@@ -19,6 +19,7 @@
         "operator-linebreak": "warn",
         "func-names": "off",
         "no-unused-vars": "warn",
-        "prefer-promise-reject-errors": "off"
+        "prefer-promise-reject-errors": "off",
+        "no_underscore_dangle": "off"
     }
 }

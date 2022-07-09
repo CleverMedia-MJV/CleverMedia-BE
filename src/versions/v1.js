@@ -7,5 +7,6 @@ const userRouter = require('../routes/users/user');
 
 // All user routes
 v1Router.use('/user', userRouter);
+v1Router.use('/auth', authRouter);
 
 module.exports = v1Router;
