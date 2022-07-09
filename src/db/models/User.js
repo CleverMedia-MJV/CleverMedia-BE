@@ -79,9 +79,10 @@ UserSchema.pre('save', async function (next) {
 });
 
 // password validation
-UserSchema.method.validate = async function (password) {
+UserSchema.methods.checkPassword = async function (password) {
   // get this password first
-  return bcrypt.compare(password, this.password);
+  // eslint-disable-next-line
+  return await bcrypt.compare(password, this.password);
 };
 
 UserSchema.index({ username: 1 });

@@ -4,16 +4,17 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const cors = require('cors');
 const xssClean = require('xss-clean');
+const ErrorHandler = require('./src/middlewares/errorHandler');
 const v1 = require('./src/versions/v1');
 
 const app = express();
 
 // middlewares
-app.use(bodyParser.json({ limit: '20kb' }));
 app.use(cors());
 app.use(helmet());
 app.use(xssClean());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: true }));
 // server home page
 app.get('/', (_, res, next) => {
   res.status(200).sendFile('./public/index.html');
@@ -27,5 +28,7 @@ app.use('/api/', v1);
 app.use('*', (_, res, next) => {
   res.status(400).send('Not found');
 });
+
+// app.use(ErrorHandler());
 
 module.exports = app;
