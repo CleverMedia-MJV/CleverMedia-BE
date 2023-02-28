@@ -1,24 +1,24 @@
 {
-    "env": {
-        "commonjs": true,
-        "es2021": true,
-        "node": true
-    },
-    "extends": [
-        "airbnb-base",
-        "prettier/prettier",
-        "plugin:node/recommended"
-    ],
-    // "plugin": ["prettier"],
-    "parserOptions": {
-        "ecmaVersion": "latest"
-    },
-    "rules": {
-        "no-use-before-define": "warn",
-        "camelcase": "off",
-        "operator-linebreak": "warn",
-        "func-names": "off",
-        "no-unused-vars": "warn",
-        "prefer-promise-reject-errors": "off"
-    }
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["airbnb-base", "prettier/prettier", "plugin:node/recommended"],
+  // "plugin": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "no-use-before-define": "warn",
+    "camelcase": "off",
+    "operator-linebreak": "off",
+    "func-names": "off",
+    "no-unused-vars": "warn",
+    "prefer-promise-reject-errors": "off",
+    "object-curly-newline": "off",
+    "no-underscore-dangle": "off",
+    "no-console": "off",
+    "comma-dangle": "off"
+  }
 }

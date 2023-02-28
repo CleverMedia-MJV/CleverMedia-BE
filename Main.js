@@ -11,6 +11,7 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 app.use(xssClean());
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 // server home page
 app.get('/', (_, res, next) => {

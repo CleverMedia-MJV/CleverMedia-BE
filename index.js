@@ -7,6 +7,8 @@ const {
   uncaughtExceptions,
 } = require('./src/errors/exceptions');
 
+require('./config/database').connect();
+
 uncaughtExceptions();
 const App = require('./Main');
 
