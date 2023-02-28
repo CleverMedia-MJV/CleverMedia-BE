@@ -75,4 +75,5 @@ async function LoginFunc(req, res) {
   }
   // Our register logic ends here
 }
+
 module.exports = { respondSuccess, registerFunc, LoginFunc };
