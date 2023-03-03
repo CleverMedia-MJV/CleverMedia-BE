@@ -13,5 +13,6 @@ router.get('/:id', Protect, (...args) =>
 router.post('/', Protect, (...args) =>
   new PostController(...args).createPost()
 );
+router.put('/:id', Protect, (...args) => new PostController(...args).update());
 
 module.exports = router;
