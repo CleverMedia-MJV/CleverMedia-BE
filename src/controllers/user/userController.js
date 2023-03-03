@@ -1,5 +1,5 @@
 const User = require('../../db/models/User');
-const CustomError = require('../../errors/customErr');
+// const CustomError = require('../../errors/customErr');
 
 class UserController {
   constructor(req, res, next) {

@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const Protect = require('../../middlewares/auth');
-const UserController = require('../../controllers/user/userController');
+// const UserController = require('../../controllers/user/userController');
 const PostController = require('../../controllers/posts/postController');
 
 const router = Router();
