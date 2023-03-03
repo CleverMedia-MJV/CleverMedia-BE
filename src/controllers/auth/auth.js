@@ -9,8 +9,9 @@ class AuthController {
     this.next = next;
   }
 
-  post() {
-    const user = new User(this.req.body);
+  async post() {
+    const user = await User(this.req.body);
+    console.log(this.req.body);
     user
       .save()
       .then((doc) => this.res.send(doc))

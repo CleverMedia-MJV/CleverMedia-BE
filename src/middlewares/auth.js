@@ -6,7 +6,7 @@ async function Protect(req, res, next) {
 
   if (token && token.startsWith('Bearer')) {
     token = req.headers.authorization.replace('Bearer ', '');
-    const decoded = jwt.verify(token, process.env.jwtSecret);
+    const decoded = jwt.verify(token, process.env.TOKEN_KEY);
     req.user = await User.findById(decoded.id);
     next();
   } else res.status(401).send('Unauthorized');

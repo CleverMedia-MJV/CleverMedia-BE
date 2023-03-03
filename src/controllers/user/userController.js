@@ -10,8 +10,21 @@ class UserController {
 
   async getDetails() {
     const { user } = this.req;
+    if (user) {
+      this.res.send(user);
+    } else {
+      this.res.status(401).send('Unauthorized');
+    }
+  }
 
-    this.res.send(user);
+  async getDetailsById() {
+    if (this.req.params.id) {
+      const userFound = await User.findOne({ _id: this.req.params.id });
+
+      this.res.send(userFound);
+    } else {
+      this.res.status(401).send('no id present');
+    }
   }
 }
 

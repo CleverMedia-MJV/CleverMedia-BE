@@ -13,8 +13,10 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 app.use(xssClean());
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 // server home page
 app.get('/', (_, res, next) => {
   res.status(200).sendFile('./public/index.html');
