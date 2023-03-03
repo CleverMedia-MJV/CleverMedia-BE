@@ -6,7 +6,10 @@ const PostController = require('../../controllers/posts/postController');
 const router = Router();
 
 // GET user with id
-// router.get('/', Protect, (...args) => new UserController(...args).getDetails());
+router.get('/', Protect, (...args) => new PostController(...args).getPosts());
+router.get('/:id', Protect, (...args) =>
+  new PostController(...args).getPostById()
+);
 router.post('/', Protect, (...args) =>
   new PostController(...args).createPost()
 );

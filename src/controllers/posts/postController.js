@@ -8,7 +8,20 @@ class PostController {
   }
 
   async getPosts() {
-    console.log(this.req);
+    const posts = await Post.find({});
+    if (posts) {
+      this.res.send(posts);
+    } else {
+      this.res.status(400).send("couldn't get posts");
+    }
+  }
+
+  async getPostById() {
+    const post = await Post.find({ _id: this.req.params.id });
+    if (post) {
+      return this.res.send(post);
+    }
+    return this.res.status(400).send("couldn't get post");
   }
 
   async createPost() {
