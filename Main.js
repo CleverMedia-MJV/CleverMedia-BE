@@ -6,7 +6,8 @@ const cors = require('cors');
 const xssClean = require('xss-clean');
 const ErrorHandler = require('./src/middlewares/errorHandler');
 const v1 = require('./src/versions/v1');
-
+const swaggerUi = require('swagger-ui-express'),
+  swaggerDocument = require('./swagger.json');
 const app = express();
 
 // middlewares
@@ -22,7 +23,7 @@ app.get('/', (_, res, next) => {
   res.status(200).sendFile('./public/index.html');
   next();
 });
-
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // version system
 app.use('/api/', v1);
 

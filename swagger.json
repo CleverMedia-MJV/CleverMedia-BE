@@ -1,0 +1,170 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "CleverMedia-BE",
+    "description": "CleverMedia-BE Application API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "https://web-production-dbaf.up.railway.app",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Users",
+      "description": "API for users in the system"
+    }
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get all users in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Users"
+            }
+          }
+        }
+      }
+    },
+    "/auth": {
+      "post": {
+        "tags": ["Users"],
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": ["Users"],
+        "description": "User Signin",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User's sigin details",
+            "schema": {
+              "$ref": "#/definitions/logindetails"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "required": ["username", "fullname", "birthday", "password", "version"],
+      "properties": {
+        "username": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "fullname": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "birthday": {
+          "type": "string",
+          "description": "birthday date",
+          "example": "2017-01-01",
+          "format": "date",
+          "pattern": "YYYY-MM-DD",
+          "minLength": 0,
+          "maxLength": 10
+        },
+        "email": {
+          "type": "array"
+        },
+        "password": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "preferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "favourites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "posts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "location": {
+          "type": "string"
+        },
+        "version": {
+          "type": "number"
+        },
+        "followers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "logindetails": {
+      "required": ["username", "password"],
+      "properties": {
+        "username": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "Users": {
+      "type": "array",
+      "$ref": "#/definitions/User"
+    }
+  },
+  "schemes": ["http", "https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"]
+}
