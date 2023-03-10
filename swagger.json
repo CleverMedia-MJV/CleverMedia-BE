@@ -9,7 +9,7 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "host": "https://web-production-dbaf.up.railway.app",
+  "host": "https://clevermedia.up.railway.app",
   "basePath": "/api",
   "tags": [
     {
