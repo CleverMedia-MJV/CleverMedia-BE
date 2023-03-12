@@ -81,6 +81,21 @@
           }
         }
       }
+    },
+    "/posts": {
+      "post": {
+        "tags": ["posts"],
+        "description": "get posts",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Get All posts",
+            "schema": {
+              "$ref": "#/definitions/Post"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -162,6 +177,18 @@
     "Users": {
       "type": "array",
       "$ref": "#/definitions/User"
+    },
+    "Post": {
+      "owner": "string",
+      "content": "string",
+      "version": "number",
+      "comments": "string",
+      "media": "string",
+      "views": "number",
+      "ratings": {
+        "likes": "number",
+        "shares": "number"
+      }
     }
   },
   "schemes": ["http", "https"],

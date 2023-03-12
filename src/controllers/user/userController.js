@@ -9,11 +9,11 @@ class UserController {
   }
 
   async getDetails() {
-    const { user } = this.req;
-    if (user) {
-      this.res.send(user);
+    const users = await User.find({});
+    if (users) {
+      this.res.send(users);
     } else {
-      this.res.status(401).send('Unauthorized');
+      this.res.status(404).send('no user in db');
     }
   }
 
