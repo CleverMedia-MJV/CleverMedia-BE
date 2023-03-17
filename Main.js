@@ -23,6 +23,7 @@ app.get('/', (_, res, next) => {
   res.status(200).sendFile('./public/index.html');
   next();
 });
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // version system
 app.use('/api/', v1);

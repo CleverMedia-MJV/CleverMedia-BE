@@ -9,8 +9,17 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "host": "https://clevermedia.up.railway.app",
+  "host": "clevermedia.up.railway.app",
   "basePath": "/api",
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
   "tags": [
     {
       "name": "Users",
@@ -19,6 +28,9 @@
   ],
   "paths": {
     "/users": {
+      " security": {
+        "BearerAuth": []
+      },
       "get": {
         "tags": ["Users"],
         "summary": "Get all users in system",
